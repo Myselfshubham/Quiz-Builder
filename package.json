@@ -1,0 +1,19 @@
+{
+  "name": "ai-quiz-builder",
+  "version": "1.0.0",
+  "description": "AI-Powered MCQ Generator & Quiz Platform",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": ["quiz", "ai", "mcq", "generator"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

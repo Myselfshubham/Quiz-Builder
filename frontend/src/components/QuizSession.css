@@ -1,0 +1,349 @@
+.quiz-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Quiz Header */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quiz-info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.question-counter,
+.answered-count {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  background-color: #f0f9ff;
+  border-radius: 8px;
+}
+
+.timer.warning {
+  color: var(--danger-color);
+  background-color: #fee2e2;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  transition: width 0.3s ease;
+}
+
+/* Question Navigation */
+.question-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.nav-btn {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--primary-light);
+  color: white;
+  transform: scale(1.1);
+}
+
+.nav-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: scale(1.15);
+}
+
+.nav-btn.answered {
+  background-color: #dcfce7;
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.nav-btn.answered.active {
+  background-color: var(--success-color);
+  color: white;
+}
+
+/* Question Card */
+.question-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 1.5rem;
+}
+
+.question-header {
+  margin-bottom: 1.5rem;
+}
+
+.question-text {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Options */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f8fafc;
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  text-align: left;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.option-btn:hover {
+  background-color: #f0f9ff;
+  border-color: var(--primary-light);
+  transform: translateX(8px);
+}
+
+.option-btn.selected {
+  background-color: #dbeafe;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.option-btn.selected .option-label {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.option-text {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+/* Quiz Actions */
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav-button {
+  flex: 1;
+  max-width: 200px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.nav-button.prev {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.nav-button.prev:hover:not(:disabled) {
+  background-color: #cbd5e1;
+}
+
+.nav-button.next {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.nav-button.next:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.submit-button {
+  background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+}
+
+/* Warnings */
+.time-warning {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  border: 2px solid var(--danger-color);
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 0.5rem;
+  }
+
+  .quiz-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quiz-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .timer {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .question-nav {
+    gap: 0.4rem;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .question-card {
+    padding: 1.5rem;
+  }
+
+  .question-text {
+    font-size: 1.2rem;
+  }
+
+  .option-btn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .option-label {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .question-card {
+    padding: 1rem;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .option-btn {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .option-btn:hover {
+    transform: translateX(4px);
+  }
+
+  .option-label {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}
